@@ -1,6 +1,5 @@
 # FemtoNet
 ![femtonet_logo](readme_logos/femtonet_logo.gif)
-#### v1.0.0
 
 This repository contains the open-source releases of the [UVA Center for Femtography](https://pages.shanti.virginia.edu/Femtography/)'s work on the applications of machine learning in the prediction of DVCS observables.
 
@@ -16,6 +15,7 @@ Code: `dvcs_cross_section`
 ![fem_logo](readme_logos/femtography_logo.png)
 ![siwif_logo](readme_logos/siwif_logo.png)
 ![doe_logo](readme_logos/doe_logo.png)
+
 ![jlab_logo](readme_logos/jlab_logo.png)
 ![sura_logo](readme_logos/sura_logo.png)
 ![seal_logo](readme_logos/seal_logo.png)
