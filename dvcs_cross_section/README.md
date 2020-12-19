@@ -7,7 +7,7 @@ For an explanation of the motivation and implementation details of this work, pl
 
 ### Installation
 ```bash
-git clone https://github.com/FemtoNet/
+git clone https://github.com/uva-femtography/FemtoNet.git 
 cd FemtoNet/dvcs_cross_section/
 make user
 ```
