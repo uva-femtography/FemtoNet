@@ -121,7 +121,9 @@ if __name__ == "__main__":
     def build_model(hp):
         activation = hp.Choice("activation", ["relu", "tanh", "swish"])
         hidden_units = []
-        for hidden_layer_num in range(hp.Choice("hidden_layer_count", [x for x in range(1, 5)])):
+        for hidden_layer_num in range(
+            hp.Choice("hidden_layer_count", [x for x in range(1, 5)])
+        ):
             hidden_units.append(
                 hp.Choice(
                     f"units_layer_{hidden_layer_num}", [32, 128, 256, 400, 800, 1024],
@@ -142,10 +144,7 @@ if __name__ == "__main__":
             optimizer=tf.keras.optimizers.Adam(
                 lr=hp.Choice("learning_rate", [0.01, 0.001, 1e-4]),
             ),
-            loss=dvcs_xsx.utils.error_weighted_huber(
-                1.,
-                use_ewh=True,
-            ),
+            loss=dvcs_xsx.utils.error_weighted_huber(1.0, use_ewh=True,),
             metrics=[
                 dvcs_xsx.utils.median_absolute_percentage_error,
                 dvcs_xsx.utils.mean_squared_error,
