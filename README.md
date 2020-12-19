@@ -1,54 +1,21 @@
-# Nuclear Networks
-#### v0.9.0
-![siwif_logo](figures/siwif_logo.png)
+# FemtoNet
+![femtonet_logo](readme_logos/femtonet_logo.gif)
 
-`nuclearnets` is a python library for Cross Section prediction in Deeply Virtual Compton Scattering Experiments.
+This repository contains the open-source releases of the [UVA Center for Femtography](https://pages.shanti.virginia.edu/Femtography/)'s work on the applications of machine learning in the prediction of DVCS observables.
 
-### Installation
-```bash
-git clone https://github.com/uva-femtography/nuclear-networks.git
-cd nuclear-networks
-make user
-```
-(If planning to contribute to `nuclearnets` development, use `make dev` instead)
+### Overview
+Each project is broken down into a subfolder, and *is its own software package*. Please see the README files inside each folder for further instructions.
 
-### Getting Started
-`nuclearnets` includes 2 pretrained models that can be used to make predictions right away. These are found in `nuclear-networks/saves/main_UU_sincos` and `nuclear-networks/saves/main_LU_sincos`.
+**1. Unpolarized and Polarized Cross Section Predictions with Deep Learning**
 
-**For all scripts, use the -h flag to get more information about command line arguments**
-#### Plotting
-##### Cross Section vs. Phi
-`python -m nuclearnets.plotting.uu_vs_phi`
+Paper: [Deep Learning Analysis of Deeply Virtual Exclusive Photoproduction](https://arxiv.org/abs/2012.04801)
 
-`python -m nuclearnets.plotting.lu_vs_phi`
+Code: `dvcs_cross_section`
 
+![fem_logo](readme_logos/femtography_logo.png)
+![siwif_logo](readme_logos/siwif_logo.png)
+![doe_logo](readme_logos/doe_logo.png)
 
-![xsx_vs_phi_example](figures/xsx_predictions/lu_defurne34_1.png)
-
-##### Cross Section vs Xi
-`python -m nuclearnets.plotting.xsx_vs_xi`
-
-![xsx_vs_xi_example](figures/xsx_predictions/lu_hallB_last_bin.png)
-
-#### Bulk Predictions
-##### Predict on Dataset
-Use a pretrained model to make predictions on the built-in datasets.
-
-`python -m nuclearnets.predict.predict_on_dataset`
-
-##### Predict on CSV
-Use a pretrained model to make predictions on your own dataset.
-
-`python -m nuclearnets.predict.predict_on_csv`
-
-The column format of the input dataset is expected to be:
-
-xbj | t | Q2 | k0 | phi | xsx_type
---- | --- | --- | --- | --- | --- |
-
-where xsx_type is an integer representation of the Cross Section type. Currently, we support:
-1. Unpolarized (UU)
-2. Polarized (LU)
-
-### Training new Models
-You can customize/retrain the model architecture using `python -m nuclearnets.train`. The model is small enough to be trained on a cpu, although a GPU would be helpeful.
+![jlab_logo](readme_logos/jlab_logo.png)
+![sura_logo](readme_logos/sura_logo.png)
+![seal_logo](readme_logos/seal_logo.png)
