@@ -1,5 +1,7 @@
-tensorflow >= 2.0
-numpy
+pip >= 19.0
+tensorflow == 2.3.0
+numpy==1.18.0
 pandas
 matplotlib
 termcolor
+tensorflow-probability == 0.11.0
