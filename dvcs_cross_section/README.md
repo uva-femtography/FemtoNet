@@ -6,9 +6,13 @@
 For an explanation of the motivation and implementation details of this work, please see [our paper](https://arxiv.org/abs/2012.04801).
 
 ### Installation
+#### Windows
 ```bash
 git clone https://github.com/uva-femtography/FemtoNet.git 
 cd FemtoNet/dvcs_cross_section/
+virtualenv venv
+cd venv
+.\Scripts\activate.bat
 make user
 ```
 (If you planning to contribute to `dvcs_xsx` development, or modify its source code, use `make dev` instead)
