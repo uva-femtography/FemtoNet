@@ -6,15 +6,32 @@
 For an explanation of the motivation and implementation details of this work, please see [our paper](https://arxiv.org/abs/2012.04801).
 
 ### Installation
+The cleanest way to install FemtoNET is by using a virtual envrionment. If you would prefer to install the package without a virtual environment, you can ignore the sections regarding activating venv and instead run amke user in the dvcs_cross_section/ directory.
+```bash
+pip install venv
+```
+
 #### Windows
 ```bash
 git clone https://github.com/uva-femtography/FemtoNet.git 
 cd FemtoNet/dvcs_cross_section/
-virtualenv venv
-cd venv
-.\Scripts\activate.bat
+python -m venv femtonet
+cd 
+.\femtonet\Scripts\activate.bat
 make user
 ```
+
+#### Linux/Mac OSX
+```bash
+git clone https://github.com/uva-femtography/FemtoNet.git 
+cd FemtoNet/dvcs_cross_section/
+python -m venv femtonet
+cd 
+source \femtonet\Scripts\activate (if using csh, source \femtonet\Scripts\activate.csh instead)
+make user
+```
+To run the code at anytime, simply return to the directory and activate the virtual environment like above.
+
 (If you planning to contribute to `dvcs_xsx` development, or modify its source code, use `make dev` instead)
 
 ### Getting Started
