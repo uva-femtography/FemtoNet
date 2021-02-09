@@ -14,20 +14,18 @@ pip install venv
 #### Windows
 ```bash
 git clone https://github.com/uva-femtography/FemtoNet.git 
-cd FemtoNet/dvcs_cross_section/
-python -m venv femtonet
-cd 
+python -m venv femtonet 
 .\femtonet\Scripts\activate.bat
+cd FemtoNet/dvcs_cross_section/
 make user
 ```
 
 #### Linux/Mac OSX
 ```bash
 git clone https://github.com/uva-femtography/FemtoNet.git 
-cd FemtoNet/dvcs_cross_section/
-python -m venv femtonet
-cd 
+python -m venv femtonet 
 source /femtonet/bin/activate (if using csh, source /femtonet/bin/activate.csh instead)
+cd FemtoNet/dvcs_cross_section/
 make user
 ```
 To run the code at anytime, simply return to the directory and activate the virtual environment like above.
