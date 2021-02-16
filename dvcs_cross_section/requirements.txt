@@ -1,5 +1,5 @@
 pip >= 19.0
-tensorflow == 2.3.0
+tensorflow == 2.3
 numpy==1.18.0
 pandas
 matplotlib
