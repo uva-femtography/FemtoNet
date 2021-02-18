@@ -16,7 +16,11 @@ from dvcs_xsx.plotting.utils import (
 
 def parse_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument("-model", required=True, type=str)
+    parser.add_argument("-model",
+                        required=False,
+                        type=str,
+                        default='dvcs_xsx/saves/femtonet_UU_standard_0/')
+
     parser.add_argument("-xbj", type=float, default=0.343)
     parser.add_argument("-t", type=float, default=-0.172)
     parser.add_argument("-Q2", type=float, default=1.820)
