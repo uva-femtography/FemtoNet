@@ -1,4 +1,4 @@
-#from . import femtogen
-from . import femtonet_api
+from . import generator
+from . import api
 
-#__all__ = ['femtogen', 'femtoapi']
+__all__ = ['generator', 'api']
