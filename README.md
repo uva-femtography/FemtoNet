@@ -8,12 +8,12 @@ git clone --recursive https://github.com/uva-femtography/femtonet.git
 ```
 Change into the repo directory and install the conda environment.
 ```
-conda create --name femtonet python=3.8 --no-default-packages
+conda create --name femtonet python=3.7 --no-default-packages
 conda activate femtonet
 ```
 The package requirements can then be installed using the following.
 ```
-conda install -n femtonet requirements.txt
+python -m pip install -r requirements.txt
 ```
 You can test the install for the generator by running the example script as a module.
 ```
