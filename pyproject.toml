@@ -7,7 +7,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name="femtonet"
-version="0.0.5"
+version="0.0.6"
 authors=[
 	{name="Joshua Hoskins", email="jrh4dy@gmail.com"}
 ]
