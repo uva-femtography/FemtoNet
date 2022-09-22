@@ -3,6 +3,7 @@ aiosignal==1.2.0
 async-timeout==4.0.2
 asynctest==0.13.0
 attrs==22.1.0
+bokeh
 certifi
 charset-normalizer==2.1.1
 cycler==0.11.0
