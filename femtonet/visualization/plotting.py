@@ -1,4 +1,5 @@
 from bokeh.models import ColumnDataSource, HoverTool
+from bokeh.models.tools import CustomJSHover
 from bokeh.plotting import figure, output_file, show, output_notebook
 from bokeh.io import show
 
@@ -49,7 +50,58 @@ def plot_compton_form_factor_ensemble(data, title='', x_label='x', y_label='y', 
         ys=data.tolist()
     ))
 
-    plot = figure(plot_width=plot_width, plot_height=plot_height, tools=["hover", "box_zoom"], title=title, x_range=_x_axis, x_axis_label=x_label, y_axis_label=y_label)
+    x_custom = CustomJSHover(args=dict(d=source), code="""
+     const seg = special_vars.segment_index;
+
+     return d.data['xs'][0][seg]
+    """)
+
+    stats = CustomJSHover(args=dict(d=source), code="""
+     const i = special_vars.index;
+     const N = d.data['ys'].length;
+     const seg = special_vars.segment_index;
+
+     let average = 0;
+     let stdev = 0;
+
+     for(let j = 0; j < N; j++){
+       average += d.data['ys'][j][seg];
+     }
+
+     average = average/N;
+
+     for(let j = 0; j < N; j++){
+      stdev += Math.pow(d.data['ys'][j][seg] - average, 2);
+     }
+
+     stdev = Math.sqrt(stdev/N);
+
+     return "(" + average.toPrecision(4) + ", " +  stdev.toPrecision(4) + ")";
+    """)
+
+    plot = figure(plot_width=plot_width,
+                  plot_height=plot_height,
+                  tools=["wheel_zoom", "box_zoom"],
+                  title=title, x_range=_x_axis,
+                  x_axis_label=x_label,
+                  y_axis_label=y_label)
+
+    plot.add_tools(
+      HoverTool(
+          show_arrow=False, 
+          line_policy='next',
+          tooltips=[
+              ('Value', '$y'),
+              ('(avg, stdev)', '@ys{custom}'),
+              ('CFF', '@xs{custom}')
+          ],
+          formatters={
+              '@ys':stats,
+              '@xs':x_custom
+          }
+      )
+    )
+    
     renderer = plot.multi_line(
         xs='xs', 
         ys='ys', 
