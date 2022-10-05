@@ -27,7 +27,6 @@ class FemtoEvolve():
     def solver(self):
   
         h = self._grid[1] - self._grid[0]
-        y= self._initial_value
 
         c1 = 1/(2*h)
         c2 = 5/(12*h)
@@ -36,8 +35,10 @@ class FemtoEvolve():
         values = np.array([])
 
         if self._window is not None and type(self._window) == list or type(self._window) == np.ndarray:
+            
             X = np.zeros(self._default_window_size)
-            Y = np.array(self._window) if type(self._window) == np.ndarray else np.array(self._window)
+            Y = self._window if type(self._window) == np.ndarray else np.array(self._window)
+            y = Y[-1]
         
         else:
             X = np.zeros(self._default_window_size)
